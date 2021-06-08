@@ -1,23 +1,28 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { RuleNode } from '../models/rule-node';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RuleNode } from '../models/rule-node.model';
 
 @Component({
   selector: 'app-node',
-  templateUrl: './node.component.html'
+  templateUrl: './node.component.html',
+  styles: [`
+    input:checked + svg {
+      display: block;
+    }
+  `]
 })
 export class NodeComponent{
   private urlPrefix = 'https://www.google.com/search?q=';
 
   @Input() node: RuleNode;
-  @Output() toggle = new EventEmitter<RuleNode>();
+  @Output() toggle = new EventEmitter();
 
   get urlReference(): string {
     return `${this.urlPrefix}${this.node.reference}`;
   }
 
-  emitChecked() {
-    if (!!this.node.children?.length) {
-      this.toggle.emit(this.node);
+  onToggle() {
+    if (!this.node.children?.length) {
+      this.toggle.emit();
     }
   }
 }

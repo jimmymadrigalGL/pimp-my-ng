@@ -1,29 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ApiService } from './services/api.service';
-import { RuleNode } from './models/rule-node';
+import { Component, OnInit } from '@angular/core';
+import { RuleNode } from './models/rule-node.model';
+import { FacadeService } from './services/facade.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit, OnDestroy {
-  tree: RuleNode[];
-  private subscriptions = new Subscription();
+export class AppComponent implements OnInit {
+  treeList$ = this.facade.tree$;
 
-  constructor(private api: ApiService) {}
+  constructor(private facade: FacadeService) {}
 
   ngOnInit() {
-    this.loadRules();
+    this.facade.fetchTree();
   }
 
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
-  }
-
-  loadRules() {
-    this.subscriptions.add(
-      this.api.fetchRules().subscribe(tree => (this.tree = tree))
-    );
+  onToggle(node: RuleNode) {
+    this.facade.checkNode(node.index, !node.checked);
   }
 }

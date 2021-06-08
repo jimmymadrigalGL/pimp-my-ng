@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { RuleNode } from '../models/rule-node';
+import { RuleNode } from '../models/rule-node.model';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -9,7 +9,7 @@ export class ApiService {
   rulesUrl = (contentId: string) =>
     `${this.serverUrl}/pimp-my-ng/master/src/${contentId}`;
 
-  fetchRules(): Observable<RuleNode[]> {
+  fetchTree(): Observable<RuleNode[]> {
     return from(fetch(this.rulesUrl(this.contentId)).then(res => res.json()));
   }
 }
