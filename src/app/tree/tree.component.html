@@ -4,7 +4,7 @@
 </div>
 <ng-template #tree let-node="node">
   <app-node [node]="node" (toggle)="onToggle(node)"></app-node>
-  <ul *ngIf="node.children?.length " class="m-1 flex flex-col relative">
+  <ul *ngIf="node.children?.length " class="m-1 mr-0 flex flex-col relative">
     <span class="absolute ml-1 w-2 h-full border-l border-gray-400"></span>
     <ng-container *ngFor="let child of node.children">
       <li class="mt-1 ml-5 relative">
