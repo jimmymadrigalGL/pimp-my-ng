@@ -7,8 +7,8 @@ import { TreeComponent } from './tree/tree.component';
 import { NodeComponent } from './node/node.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, TreeComponent, NodeComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent, TreeComponent, NodeComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

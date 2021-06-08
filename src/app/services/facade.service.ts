@@ -1,13 +1,34 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { ReplaySubject, Observable, of, from } from 'rxjs';
+import { map, scan, switchMap, tap } from 'rxjs/operators';
 import { RuleNode } from '../models/rule-node.model';
-import { ApiService } from './api.service';
 
 interface VirtualNode {
   id: string;
   children: VirtualNode[];
 }
+
+interface CheckAction {
+  type: 'Check';
+  id: string;
+}
+
+interface UncheckAction {
+  type: 'Uncheck';
+  id: string;
+}
+
+interface LoadAction {
+  type: 'Load';
+}
+
+interface LoadSuccessAction {
+  type: 'Load Success';
+  hash: { [key: string]: RuleNode };
+  tree: VirtualNode[];
+}
+
+type Action = CheckAction | UncheckAction | LoadAction | LoadSuccessAction;
 
 interface State {
   hash: { [key: string]: RuleNode };
@@ -22,64 +43,101 @@ export class FacadeService {
     tree: [],
     checked: {}
   };
-  private state$ = new BehaviorSubject<State>(this.initialState);
+  private state$: Observable<State>;
+  private actions$ = new ReplaySubject<Action>();
 
-  tree$ = this.state$.pipe(map(state => this.unpackTree(state)));
+  tree$: Observable<RuleNode[]>;
 
-  constructor(private apiService: ApiService) {}
-
-  fetchTree() {
-    this.apiService
-      .fetchTree()
-      .subscribe(list => this.state$.next(this.createTree(list)));
+  constructor() {
+    this.createState();
   }
 
-  checkNode(id: string | number, check = true) {
-    const state = this.state$.value;
-    const checked = {
-      ...state.checked
-    };
-    if (check) {
-      checked[id] = true;
-    } else {
-      delete checked[id];
-    }
-    this.state$.next({
-      ...state,
-      checked
+  fetchTree() {
+    this.actions$.next({
+      type: 'Load'
     });
   }
 
-  private createTree(list: RuleNode[]): State {
+  checkNode(id: string | number, check = true) {
+    this.actions$.next({
+      type: check ? 'Check' : 'Uncheck',
+      id: id.toString()
+    });
+  }
+
+  private createState() {
+    this.state$ = this.actions$.pipe(
+      switchMap(action => this.handleEffect(action)),
+      tap(action => console.log(action)),
+      scan((state, action) => this.reduce(action, state), this.initialState)
+    );
+    this.tree$ = this.state$.pipe(map(state => this.unpackTree(state)));
+  }
+
+  private handleEffect(action: Action): Observable<Action> {
+    if (action.type === 'Load') {
+      return this.fetchTreeApi().pipe(map(list => this.handleLoadAction(list)));
+    }
+    return of(action);
+  }
+
+  private handleLoadAction(list: RuleNode[]): LoadSuccessAction {
     const hash = list.reduce(
       (state, node) => ({
         ...state,
-        ...this.hashNode(node)
+        ...this.createHash(node)
       }),
       {}
     );
-    const tree = list.map(node => this.virtualizeNode(node));
+    const tree = list.map(node => this.packNode(node));
     return {
-      ...this.initialState,
+      type: 'Load Success',
       hash,
-      tree,
-      checked: {}
+      tree
     };
   }
 
-  private virtualizeNode(node: RuleNode): VirtualNode {
-    const children = node.children.map(child => this.virtualizeNode(child));
+  private reduce(action: Action, state: State): State {
+    switch (action.type) {
+      case 'Check':
+        return {
+          ...state,
+          checked: {
+            ...state.checked,
+            [action.id]: true
+          }
+        };
+      case 'Uncheck':
+        const checked = { ...state.checked };
+        delete checked[action.id];
+        return {
+          ...state,
+          checked: {
+            ...checked
+          }
+        };
+      case 'Load Success':
+        return {
+          ...state,
+          hash: action.hash,
+          tree: action.tree
+        };
+    }
+  }
+
+  private packNode(node: RuleNode): VirtualNode {
+    const children = node.children.map(child => this.packNode(child));
     return {
       id: node.index.toString(),
       children
     };
   }
 
-  private hashNode(node: RuleNode): { [key: string]: RuleNode } {
+  private createHash(node: RuleNode): { [key: string]: RuleNode } {
     return node.children.reduce(
       (hash, child) => ({
         ...hash,
-        ...this.hashNode(child)
+        ...this.createHash(child)
       }),
       {
         [node.index]: node
@@ -104,5 +162,12 @@ export class FacadeService {
       children,
       checked
     };
+  }
+
+  private fetchTreeApi(): Observable<RuleNode[]> {
+    const serverUrl = 'https://raw.githubusercontent.com/jimmymadrigalGL';
+    const contentId = 'tree.json';
+    const url = `${serverUrl}/pimp-my-ng/master/src/${contentId}`;
+    return from(fetch(url).then(res => res.json()));
   }
 }
