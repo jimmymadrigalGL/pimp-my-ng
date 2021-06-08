@@ -4,11 +4,6 @@ import { RuleNode } from '../models/rule-node.model';
 @Component({
   selector: 'app-node',
   templateUrl: './node.component.html',
-  styles: [`
-    input:checked + svg {
-      display: block;
-    }
-  `]
 })
 export class NodeComponent{
   private urlPrefix = 'https://www.google.com/search?q=';
