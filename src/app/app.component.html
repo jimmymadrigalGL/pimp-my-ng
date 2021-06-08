@@ -1,0 +1,4 @@
+
+<ul *ngIf="tree?.length" class="m-3 flex flex-col flex-wrap justify-start items-stretch content-stretch">
+  <app-tree *ngFor="let node of tree" [node]="node"></app-tree>
+</ul>

@@ -1,0 +1,56 @@
+<label
+  class="flex justify-start items-start"
+  [class.text-gray-500]="node.type !== 'Rule' || node.automatic"
+  [class.bg-yellow-100]="node.type === 'Rule' && !node.automatic"
+>
+  <div
+    class="bg-white border-2 rounded w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
+    [class.border-green-400]="node.type === 'Rule'"
+    [class.border-green-200]="node.type !== 'Rule'"
+  >
+    <input
+      type="checkbox"
+      #checkbox
+      [disabled]="node.type !== 'Rule'"
+      [(ngModel)]="node.checked"
+      (change)="emitChecked()"
+      class="opacity-0 absolute"
+    />
+    <svg
+      class="fill-current hidden w-4 h-4 pointer-events-none"
+      [class.text-green-400]="node.type === 'Rule'"
+      [class.text-green-200]="node.type !== 'Rule'"
+      viewBox="0 0 20 20"
+    >
+      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+    </svg>
+  </div>
+  <div class="select-none mt-1">
+    <strong
+      *ngIf="!!node.recomendation && node.recomendation !== 'Do'"
+      class="p-1 mr-2 rounded-lg text-white"
+      [class.bg-red-400]="node.recomendation === 'Avoid'"
+      [class.bg-green-400]="node.recomendation === 'Consider'"
+      >{{ node.recomendation }}
+    </strong>
+    <span [innerHTML]="node.label"></span>
+    <a
+      target="_blank"
+      [attr.href]="urlReference"
+      class="ml-2 text-indigo-600 underline hover:text-blue-400"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        data-icon="external-link"
+        viewBox="0 0 100 100"
+        class="w-auto inline"
+        style="height: 1em"
+      >
+        <path
+          fill="currentColor"
+          d="M83.736 62.178h-6.16a3.08 3.08 0 00-3.079 3.08v21.558H12.904V25.222H40.62a3.08 3.08 0 003.08-3.08v-6.159a3.08 3.08 0 00-3.08-3.08H9.824a9.239 9.239 0 00-9.24 9.24v67.752a9.239 9.239 0 009.24 9.24h67.753a9.239 9.239 0 009.239-9.24V65.258a3.08 3.08 0 00-3.08-3.08zM91.95.585H61.41a5.39 5.39 0 00-5.39 5.39v3.6a5.39 5.39 0 005.542 5.234l12.936-.366-47.916 47.56-.011.012a4.62 4.62 0 000 6.533l4.608 4.59.011.012a4.62 4.62 0 006.527-.018l47.56-47.91-.362 12.939v.15a5.39 5.39 0 005.39 5.39h3.441a5.39 5.39 0 005.39-5.39V7.77A7.185 7.185 0 0091.949.584z"
+        />
+      </svg>
+    </a>
+  </div>
+</label>
