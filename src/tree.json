@@ -1,0 +1,1162 @@
+[
+  {
+    "index": 0,
+    "type": "File",
+    "label": "Typescript",
+    "level": 1,
+    "reference": "Typescript",
+    "children": [
+      {
+        "index": 19,
+        "type": "Section",
+        "label": "Imports statements",
+        "level": 2,
+        "reference": "Imports-statements",
+        "children": [
+          {
+            "index": 46,
+            "type": "Rule",
+            "label": "Group imports in 4 groups.",
+            "level": 4,
+            "reference": "Do%3A-Group-imports-in-4-groups.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 1035,
+            "type": "Rule",
+            "label": "Break long imports into multilines.",
+            "level": 4,
+            "reference": "Do%3A-Break-long-imports-into-multilines.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 2470,
+            "type": "Rule",
+            "label": "Sort import groups alphabetically by packages names.",
+            "level": 4,
+            "reference": "Do%3A-Sort-import-groups-alphabetically-by-packages-names.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 4066,
+        "type": "Section",
+        "label": "Methods and properties",
+        "level": 2,
+        "reference": "Methods-and-properties",
+        "children": [
+          {
+            "index": 4097,
+            "type": "Rule",
+            "label": "Add empty line after class declaration.",
+            "level": 4,
+            "reference": "Do%3A-Add-empty-line-after-class-declaration.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 5475,
+            "type": "Rule",
+            "label": "<del>Using empty constructors or lifecycle hooks.</del>",
+            "level": 4,
+            "reference": "Avoid%3A-Using-empty-constructors-or-lifecycle-hooks.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 6310,
+            "type": "Rule",
+            "label": "Empty constructors should close in a new line.",
+            "level": 4,
+            "reference": "Do%3A-Empty-constructors-should-close-in-a-new-line.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 7530,
+            "type": "Rule",
+            "label": "Props/Methods order.",
+            "level": 4,
+            "reference": "Do%3A-Props%2FMethods-order.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 9761,
+            "type": "Rule",
+            "label": "<del>Using Store in a dumb/presenter component.</del> [NG]",
+            "level": 4,
+            "reference": "Avoid%3A-Using-Store-in-a-dumb%2Fpresenter-component.-%5BNG%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": null
+          },
+          {
+            "index": 10205,
+            "type": "Rule",
+            "label": "<del>Using HTTP Client in a component. </del>",
+            "level": 4,
+            "reference": "Avoid%3A-Using-HTTP-Client-in-a-component.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 10679,
+            "type": "Rule",
+            "label": "Select router params and query params via the store.",
+            "level": 4,
+            "reference": "Do%3A-Select-router-params-and-query-params-via-the-store.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 12162,
+            "type": "Rule",
+            "label": "Using explicit <code>void</code> return type in method.",
+            "level": 4,
+            "reference": "Avoid%3A-Using-explicit-void-return-type-in-method.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 13395,
+        "type": "Section",
+        "label": "Decorators",
+        "level": 2,
+        "reference": "Decorators",
+        "children": [
+          {
+            "index": 13414,
+            "type": "Rule",
+            "label": "<del>Using </del><code>selector</code><del> in directly routed containers.</del>",
+            "level": 4,
+            "reference": "Avoid%3A-Using-selector-in-directly-routed-containers.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 15064,
+            "type": "Rule",
+            "label": "Use<code> prefix-cm-... </code> in cm lib components selectors.",
+            "level": 4,
+            "reference": "Do%3A-Use-prefix-cm-...--in-cm-lib-components-selectors.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 16649,
+        "type": "Section",
+        "label": "Statements",
+        "level": 2,
+        "reference": "Statements",
+        "children": [
+          {
+            "index": 16668,
+            "type": "Rule",
+            "label": "<del>Unnecessary else statements</del>.",
+            "level": 4,
+            "reference": "Avoid%3A-Unnecessary-else-statements.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 17958,
+            "type": "Rule",
+            "label": "<del>Non boolean conditions</del>.",
+            "level": 4,
+            "reference": "Avoid%3A-Non-boolean-conditions.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 19255,
+            "type": "Rule",
+            "label": "Add<code> &lt;EMPTY LINE&gt;</code> before return statement.",
+            "level": 4,
+            "reference": "Do%3A-Add-%26lt%3BEMPTY-LINE%26gt%3B-before-return-statement.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 20590,
+            "type": "Rule",
+            "label": "Add spaces to template literal params .",
+            "level": 4,
+            "reference": "Do%3A-Add-spaces-to-template-literal-params-.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 21928,
+            "type": "Rule",
+            "label": "Using explicit types when not needed.",
+            "level": 4,
+            "reference": "Avoid%3A-Using-explicit-types-when-not-needed.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23154,
+    "type": "File",
+    "label": "Models Enums and Services",
+    "level": 1,
+    "reference": "Models-Enums-and-Services",
+    "children": [
+      {
+        "index": 23188,
+        "type": "Section",
+        "label": "Models",
+        "level": 2,
+        "reference": "Models",
+        "children": [
+          {
+            "index": 23203,
+            "type": "Rule",
+            "label": "Using interface when possible.",
+            "level": 4,
+            "reference": "Consider%3A-Using-interface-when-possible.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Consider",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 23490,
+            "type": "Rule",
+            "label": "Separate model blocks with <code>&lt;EMPTY LINE&gt;</code>.",
+            "level": 4,
+            "reference": "Consider%3A-Separate-model-blocks-with-%26lt%3BEMPTY-LINE%26gt%3B.-%5BOther%5D",
+            "children": [
+
+            ],
+            "recomendation": "Consider",
+            "automatic": false,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 24877,
+        "type": "Section",
+        "label": "Enums",
+        "level": 2,
+        "reference": "Enums",
+        "children": [
+          {
+            "index": 24891,
+            "type": "Rule",
+            "label": "Use string values.",
+            "level": 4,
+            "reference": "Do%3A-Use-string-values.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 26211,
+            "type": "Rule",
+            "label": "PascalCase keys.",
+            "level": 4,
+            "reference": "Do%3A-PascalCase-keys.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 27554,
+            "type": "Rule",
+            "label": "using similar named value key pairs.",
+            "level": 4,
+            "reference": "Do%3A-using-similar-named-value-key-pairs.-%5BOther%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": false,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 29160,
+        "type": "Section",
+        "label": "Services",
+        "level": 2,
+        "reference": "Services",
+        "children": [
+          {
+            "index": 29177,
+            "type": "Rule",
+            "label": "<del>Do not use providedIn root.</del>",
+            "level": 4,
+            "reference": "Avoid%3A-Do-not-use-providedIn-root.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 30323,
+            "type": "Rule",
+            "label": "<del>Creating subscriptions inside services. </del>",
+            "level": 4,
+            "reference": "Avoid%3A-Creating-subscriptions-inside-services.-%5BGL%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "GL"
+          },
+          {
+            "index": 30748,
+            "type": "Section",
+            "label": "Facade",
+            "level": 3,
+            "reference": "Facade",
+            "children": [
+              {
+                "index": 30763,
+                "type": "Rule",
+                "label": "Using a Facade to separate store logic from containers.",
+                "level": 4,
+                "reference": "Consider%3A-Using-a-Facade-to-separate-store-logic-from-containers.-%5BGL%5D",
+                "children": [
+
+                ],
+                "recomendation": "Consider",
+                "automatic": false,
+                "source": "GL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32666,
+    "type": "File",
+    "label": "State Management",
+    "level": 1,
+    "reference": "State-Management",
+    "children": [
+      {
+        "index": 32691,
+        "type": "Rule",
+        "label": "Store feature name is camel case.",
+        "level": 4,
+        "reference": "Do%3A-Store-feature-name-is-camel-case.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 33694,
+        "type": "Rule",
+        "label": "Use StoreEntity for fetching store objects.",
+        "level": 4,
+        "reference": "Do%3A-Use-StoreEntity-for-fetching-store-objects.-%5BOther%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": false,
+        "source": "Other"
+      },
+      {
+        "index": 34787,
+        "type": "Rule",
+        "label": "Use StoreList for fetching store objects.",
+        "level": 4,
+        "reference": "Do%3A-Use-StoreList-for-fetching-store-objects.-%5BOther%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": false,
+        "source": "Other"
+      },
+      {
+        "index": 36012,
+        "type": "Rule",
+        "label": "Using NGRX EntityAdapter for performance.",
+        "level": 4,
+        "reference": "Consider%3A-Using-NGRX-EntityAdapter-for-performance.-%5BGL%5D",
+        "children": [
+
+        ],
+        "recomendation": "Consider",
+        "automatic": false,
+        "source": "GL"
+      },
+      {
+        "index": 37958,
+        "type": "Section",
+        "label": "Effects",
+        "level": 2,
+        "reference": "Effects",
+        "children": [
+          {
+            "index": 37974,
+            "type": "Rule",
+            "label": "Using the map/catch pattern.",
+            "level": 4,
+            "reference": "Consider%3A-Using-the-map%2Fcatch-pattern.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Consider",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 38816,
+            "type": "Rule",
+            "label": "<del>Using type </del><code>any</code><del> for actions in operators.</del>",
+            "level": 4,
+            "reference": "Avoid%3A-Using-type-any-for-actions-in-operators.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 40255,
+        "type": "Section",
+        "label": "Selectors",
+        "level": 2,
+        "reference": "Selectors",
+        "children": [
+          {
+            "index": 40273,
+            "type": "Rule",
+            "label": "Use select prefix on selectors.",
+            "level": 4,
+            "reference": "Do%3A-Use-select-prefix-on-selectors.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      },
+      {
+        "index": 41891,
+        "type": "Section",
+        "label": "Actions",
+        "level": 2,
+        "reference": "Actions",
+        "children": [
+          {
+            "index": 41907,
+            "type": "Rule",
+            "label": "Provide<code> [feature/context] action</code> in action names.",
+            "level": 4,
+            "reference": "Do%3A-Provide-%5Bfeature%2Fcontext%5D-action-in-action-names.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 42301,
+            "type": "Rule",
+            "label": "Provide <code>[feature/context API] action</code> in http response action names.",
+            "level": 4,
+            "reference": "Do%3A-Provide-%5Bfeature%2Fcontext-API%5D-action-in-http-response-action-names.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 43074,
+            "type": "Rule",
+            "label": "<del>Actions in PAST.</del>",
+            "level": 4,
+            "reference": "Avoid%3A-Actions-in-PAST.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 43504,
+            "type": "Rule",
+            "label": "import actions as <code>import * as fromXActions</code>.",
+            "level": 4,
+            "reference": "Do%3A-import-actions-as-import-*-as-fromXActions.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          },
+          {
+            "index": 43866,
+            "type": "Rule",
+            "label": "Specify which fetch you are handling.",
+            "level": 4,
+            "reference": "Do%3A-Specify-which-fetch-you-are-handling.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Do",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44419,
+    "type": "File",
+    "label": "RXJS",
+    "level": 1,
+    "reference": "RXJS",
+    "children": [
+      {
+        "index": 44432,
+        "type": "Rule",
+        "label": "<del>Zombie subscriptions</del>. [NG]",
+        "level": 4,
+        "reference": "Avoid%3A-Zombie-subscriptions.-%5BNG%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": null
+      },
+      {
+        "index": 45903,
+        "type": "Rule",
+        "label": "When subscribing to the Store use <code>selectUntilDestroyed</code>.",
+        "level": 4,
+        "reference": "Do%3A-When-subscribing-to-the-Store-use-selectUntilDestroyed.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 47470,
+        "type": "Rule",
+        "label": "<del>Inline observable </del><code>pipe</code><del> operators</del>.",
+        "level": 4,
+        "reference": "Avoid%3A-Inline-observable-pipe-operators.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      }
+    ]
+  },
+  {
+    "index": 49260,
+    "type": "File",
+    "label": "Forms",
+    "level": 1,
+    "reference": "Forms",
+    "children": [
+      {
+        "index": 49274,
+        "type": "Rule",
+        "label": "Use mask <code>(000) 000-0000</code> for phone fields.",
+        "level": 4,
+        "reference": "Do%3A-Use-mask-(000)-000-0000-for-phone-fields.-%5BOther%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": false,
+        "source": "Other"
+      },
+      {
+        "index": 49579,
+        "type": "Rule",
+        "label": "Use mask <code>0,000.00 </code> for balance fields and align right.",
+        "level": 4,
+        "reference": "Do%3A-Use-mask-0%2C000.00--for-balance-fields-and-align-right.-%5BOther%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": false,
+        "source": "Other"
+      },
+      {
+        "index": 49821,
+        "type": "Section",
+        "label": "ControlValueAccessor:",
+        "level": 2,
+        "reference": "ControlValueAccessor%3A",
+        "children": [
+          {
+            "index": 49851,
+            "type": "Rule",
+            "label": "Using input and outputs in control.",
+            "level": 4,
+            "reference": "Avoid%3A-Using-input-and-outputs-in-control.-%5BOther%5D-%5BAuto%5D",
+            "children": [
+
+            ],
+            "recomendation": "Avoid",
+            "automatic": true,
+            "source": "Other"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51359,
+    "type": "File",
+    "label": "Testing",
+    "level": 1,
+    "reference": "Testing",
+    "children": [
+      {
+        "index": 51375,
+        "type": "Rule",
+        "label": "It blocks should have 3 blocks for AAA.",
+        "level": 4,
+        "reference": "Do%3A-It-blocks-should-have-3-blocks-for-AAA.-%5BGL%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "GL"
+      },
+      {
+        "index": 52573,
+        "type": "Rule",
+        "label": "Not using <code>NO_ERRORS_SCHEMA</code>.",
+        "level": 4,
+        "reference": "Consider%3A-Not-using-NO_ERRORS_SCHEMA.-%5BGL%5D",
+        "children": [
+
+        ],
+        "recomendation": "Consider",
+        "automatic": false,
+        "source": "GL"
+      },
+      {
+        "index": 52781,
+        "type": "Rule",
+        "label": "Not inline providing objects in module.",
+        "level": 4,
+        "reference": "Consider%3A-Not-inline-providing-objects-in-module.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Consider",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 54338,
+        "type": "Rule",
+        "label": "Tests should consider branches.",
+        "level": 4,
+        "reference": "Do%3A-Tests-should-consider-branches.-%5BOther%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": false,
+        "source": "Other"
+      }
+    ]
+  },
+  {
+    "index": 56240,
+    "type": "File",
+    "label": "HTML",
+    "level": 1,
+    "reference": "HTML",
+    "children": [
+      {
+        "index": 56253,
+        "type": "Rule",
+        "label": "<del>Using </del><code>h4</code><del>, </del><code>h5</code><del>, &hellip; headers.</del>",
+        "level": 4,
+        "reference": "Avoid%3A-Using-h4%2C-h5%2C-%26hellip%3B-headers.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 56589,
+        "type": "Rule",
+        "label": "Id pattern feature--element--specific-context.",
+        "level": 4,
+        "reference": "Do%3A-Id-pattern-feature--element--specific-context.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 58197,
+        "type": "Rule",
+        "label": "<del>Broken indentation</del>.",
+        "level": 4,
+        "reference": "Avoid%3A-Broken-indentation.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 59397,
+        "type": "Rule",
+        "label": "<del>Outputs before inputs</del>.",
+        "level": 4,
+        "reference": "Avoid%3A-Outputs-before-inputs.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 60684,
+        "type": "Rule",
+        "label": "<del>Breaking component tags</del><del>. </del>",
+        "level": 4,
+        "reference": "Avoid%3A-Breaking-component-tags.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 62060,
+        "type": "Rule",
+        "label": "<del>Using </del><code>this</code><del> in html.</del>",
+        "level": 4,
+        "reference": "Avoid%3A-Using-this-in-html.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 63315,
+        "type": "Rule",
+        "label": "Add spaces to inline object literals.",
+        "level": 4,
+        "reference": "Do%3A-Add-spaces-to-inline-object-literals.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 64584,
+        "type": "Rule",
+        "label": "Format numeric values with pipes. [Client]",
+        "level": 4,
+        "reference": "Do%3A-Format-numeric-values-with-pipes.-%5BClient%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": false,
+        "source": null
+      },
+      {
+        "index": 65832,
+        "type": "Rule",
+        "label": "Order component attributes.",
+        "level": 4,
+        "reference": "Do%3A-Order-component-attributes.-%5BGL%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "GL"
+      }
+    ]
+  },
+  {
+    "index": 67639,
+    "type": "File",
+    "label": "CSS",
+    "level": 1,
+    "reference": "CSS",
+    "children": [
+      {
+        "index": 67651,
+        "type": "Rule",
+        "label": "Classes should be kebab-cased.",
+        "level": 4,
+        "reference": "Do%3A-Classes-should-be-kebab-cased.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 68660,
+        "type": "Rule",
+        "label": "<del>Bootstrap.</del>",
+        "level": 4,
+        "reference": "Avoid%3A-Bootstrap.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 68798,
+        "type": "Rule",
+        "label": "<del>Using</del> <code>ng-deep</code>.",
+        "level": 4,
+        "reference": "Avoid%3A-Using-ng-deep.-%5BGL%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "GL"
+      },
+      {
+        "index": 68992,
+        "type": "Rule",
+        "label": "Importing from <code>&lt;micropp&gt;/styles/variables</code>",
+        "level": 4,
+        "reference": "Consider%3A-Importing-from-%26lt%3Bmicropp%26gt%3B%2Fstyles%2Fvariables-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Consider",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 71162,
+        "type": "Rule",
+        "label": "<del>Using</del> <code>var(--..)</code>.",
+        "level": 4,
+        "reference": "Avoid%3A-Using-var(--..).-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 71322,
+        "type": "Rule",
+        "label": "<del>Using deprecated color variables.</del>",
+        "level": 4,
+        "reference": "Avoid%3A-Using-deprecated-color-variables.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 71832,
+        "type": "Rule",
+        "label": "Black SVG with filter.",
+        "level": 4,
+        "reference": "Do%3A-Black-SVG-with-filter.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      }
+    ]
+  },
+  {
+    "index": 72408,
+    "type": "File",
+    "label": "Folder Structure",
+    "level": 1,
+    "reference": "Folder-Structure",
+    "children": [
+      {
+        "index": 72433,
+        "type": "Rule",
+        "label": "Shared tests utils in <code>&lt;micro-app&gt;/shared/&lt;feature&gt;/utils/&lt;test-util-file&gt;.ts</code>.",
+        "level": 4,
+        "reference": "Do%3A-Shared-tests-utils-in-%26lt%3Bmicro-app%26gt%3B%2Fshared%2F%26lt%3Bfeature%26gt%3B%2Futils%2F%26lt%3Btest-util-file%26gt%3B.ts.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 73638,
+        "type": "Rule",
+        "label": "Non shared tests utils in <code>&lt;micro-app&gt;/features/&lt;feature&gt;/utils/&lt;test-util-file&gt;.ts</code>.",
+        "level": 4,
+        "reference": "Do%3A-Non-shared-tests-utils-in-%26lt%3Bmicro-app%26gt%3B%2Ffeatures%2F%26lt%3Bfeature%26gt%3B%2Futils%2F%26lt%3Btest-util-file%26gt%3B.ts.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 74140,
+        "type": "Rule",
+        "label": "<del>Test utils outside of shared</del> <code>&lt;micro-app&gt;/utils/&lt;test-util-file&gt;.ts</code>.",
+        "level": 4,
+        "reference": "Avoid%3A-Test-utils-outside-of-shared-%26lt%3Bmicro-app%26gt%3B%2Futils%2F%26lt%3Btest-util-file%26gt%3B.ts.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 74354,
+        "type": "Rule",
+        "label": "Feature module in <code>&lt;micro-app&gt;/features/&lt;feature&gt;/&lt;feature&gt;.module.ts</code>.",
+        "level": 4,
+        "reference": "Do%3A-Feature-module-in-%26lt%3Bmicro-app%26gt%3B%2Ffeatures%2F%26lt%3Bfeature%26gt%3B%2F%26lt%3Bfeature%26gt%3B.module.ts.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 74674,
+        "type": "Rule",
+        "label": "Shared files in <code>&lt;micro-app&gt;/shared/&lt;feature&gt;/&lt;type&gt;/&lt;file&gt;</code>.",
+        "level": 4,
+        "reference": "Do%3A-Shared-files-in-%26lt%3Bmicro-app%26gt%3B%2Fshared%2F%26lt%3Bfeature%26gt%3B%2F%26lt%3Btype%26gt%3B%2F%26lt%3Bfile%26gt%3B.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 75370,
+        "type": "Rule",
+        "label": "Shared icons in <code>libs/assets/src/lib/icons/</code>.",
+        "level": 4,
+        "reference": "Do%3A-Shared-icons-in-libs%2Fassets%2Fsrc%2Flib%2Ficons%2F.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 76045,
+        "type": "Rule",
+        "label": "<del>Moving </del><code>libs/ui/styles/ag-grid.scss</code>.",
+        "level": 4,
+        "reference": "Avoid%3A-Moving-libs%2Fui%2Fstyles%2Fag-grid.scss.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Avoid",
+        "automatic": true,
+        "source": "Other"
+      }
+    ]
+  },
+  {
+    "index": 76464,
+    "type": "File",
+    "label": "Translation Files",
+    "level": 1,
+    "reference": "Translation-Files",
+    "children": [
+      {
+        "index": 76490,
+        "type": "Rule",
+        "label": "Order keys alphabetically.",
+        "level": 4,
+        "reference": "Do%3A-Order-keys-alphabetically.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 78396,
+        "type": "Rule",
+        "label": "Add newline before blocks.",
+        "level": 4,
+        "reference": "Do%3A-Add-newline-before-blocks.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      },
+      {
+        "index": 79991,
+        "type": "Rule",
+        "label": "Blocks should be placed at the end of the parent block.",
+        "level": 4,
+        "reference": "Do%3A-Blocks-should-be-placed-at-the-end-of-the-parent-block.-%5BOther%5D-%5BAuto%5D",
+        "children": [
+
+        ],
+        "recomendation": "Do",
+        "automatic": true,
+        "source": "Other"
+      }
+    ]
+  }
+]
