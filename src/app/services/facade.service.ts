@@ -82,18 +82,10 @@ export class FacadeService {
   }
 
   private handleLoadAction(list: RuleNode[]): LoadSuccessAction {
-    const hash = list.reduce(
-      (state, node) => ({
-        ...state,
-        ...this.createHash(node)
-      }),
-      {}
-    );
-    const tree = list.map(node => this.packNode(node));
     return {
       type: 'Load Success',
-      hash,
-      tree
+      hash: this.createHash(list),
+      tree: this.packTree(list),
     };
   }
 
@@ -125,43 +117,68 @@ export class FacadeService {
     }
   }
 
-  private packNode(node: RuleNode): VirtualNode {
-    const children = node.children.map(child => this.packNode(child));
-    return {
-      id: node.index.toString(),
-      children
-    };
+  private packTree(list: RuleNode[]): VirtualNode[] {
+    const fn = (node: RuleNode, children: any) => ({ id: node.index.toString(), children });
+    return list.map(node => this.recursiveChildFirst(node, fn))
   }
 
-  private createHash(node: RuleNode): { [key: string]: RuleNode } {
-    return node.children.reduce(
-      (hash, child) => ({
-        ...hash,
-        ...this.createHash(child)
-      }),
-      {
-        [node.index]: node
-      }
+  private createHash(list: RuleNode[]): { [key: string]: RuleNode } {
+    const fn = (node: RuleNode, children: any) => ({ [node.index]: node, ...children });
+    return list.map(node => this.recursiveChildFirst(node, fn)).reduce(
+      (acum, hash) => ({ ...hash, ...acum }), {}
     );
+
+    // const hash = list.reduce(
+    //   (state, node) => ({
+    //     ...state,
+    //     ...this.createHash(node)
+    //   }),
+    //   {}
+    // );
+
+    // return node.children.reduce(
+    //   (hash, child) => ({
+    //     ...hash,
+    //     ...this.createHash(child)
+    //   }),
+    //   {
+    //     [node.index]: node
+    //   }
+    // );
   }
 
   private unpackTree(state: State): RuleNode[] {
-    return state.tree.map(node => this.unpackNode(node, state));
+
+    const checked = (node: RuleNode) => state.checked[node.index]
+      || (node.children.length > 0 && node.children.every(child => child.checked));
+
+    const fn = (virtualNode: VirtualNode, children: RuleNode[]): RuleNode => ({
+      ...state.hash[virtualNode.id],
+      checked: checked(state.hash[virtualNode.id]),
+    });
+
+
+    return state.tree.map(node => this.recursiveChildFirst(node, fn));
   }
 
-  private unpackNode(virtualNode: VirtualNode, state: State): RuleNode {
-    const node = state.hash[virtualNode.id];
-    const children = virtualNode.children.map(child =>
-      this.unpackNode(child, state)
-    );
-    const checked =
-      state.checked[virtualNode.id] ||
-      (children.length > 0 && children.every(child => child.checked));
-    return {
-      ...node,
-      children,
-      checked
-    };
+  // private unpackNode(virtualNode: VirtualNode, state: State): RuleNode {
+  //   const node = state.hash[virtualNode.id];
+  //   const children = virtualNode.children.map(child =>
+  //     this.unpackNode(child, state)
+  //   );
+  //   const checked =
+  //     state.checked[virtualNode.id] ||
+  //     (children.length > 0 && children.every(child => child.checked));
+  //   return {
+  //     ...node,
+  //     children,
+  //     checked
+  //   };
+  // }
+
+  private recursiveChildFirst<T>(parent, fn: (p, c) => T) {
+    const children = parent.children?.map(child => this.recursiveChildFirst(child, fn));
+    return fn(parent, children);
   }
 
   private fetchTreeApi(): Observable<RuleNode[]> {
@@ -170,4 +187,5 @@ export class FacadeService {
     const url = `${serverUrl}/pimp-my-ng/master/src/${contentId}`;
     return from(fetch(url).then(res => res.json()));
   }
+
 }

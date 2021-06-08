@@ -6,7 +6,7 @@
   <app-node [node]="node" (toggle)="onToggle(node)"></app-node>
   <ul *ngIf="node.children?.length " class="m-1 mr-0 flex flex-col relative">
     <span class="absolute ml-1 w-2 h-full border-l border-gray-400"></span>
-    <ng-container *ngFor="let child of node.children">
+    <ng-container *ngFor="let child of node.children; trackBy: identify">
       <li class="mt-1 ml-5 relative">
         <span class="absolute -ml-4 mt-3 w-3 h-full border-t border-gray-400"></span>
         <ng-container *ngTemplateOutlet="tree; context:{ node:child }">

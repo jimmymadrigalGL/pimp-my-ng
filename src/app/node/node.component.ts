@@ -1,20 +1,27 @@
-import { Component, EventEmitter, Input, DoCheck, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  DoCheck,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { RuleNode } from '../models/rule-node.model';
 
 @Component({
   selector: 'app-node',
-  templateUrl: './node.component.html',
+  templateUrl: './node.component.html'
 })
 export class NodeComponent implements DoCheck {
   @Input() node: RuleNode;
   @Output() toggle = new EventEmitter();
 
   private urlPrefix = 'https://www.google.com/search?q=';
-  
+
   checkCount = 0;
 
   constructor() {
-    setInterval(_ => {}, 1000);
+    setInterval(null, 1000);
   }
 
   ngDoCheck(): void {
@@ -26,7 +33,7 @@ export class NodeComponent implements DoCheck {
   }
 
   onToggle() {
-    if (!this.node.children?.length) {
+    if (!this.node.children || this.node.children.length === 0) {
       this.toggle.emit();
     }
   }
