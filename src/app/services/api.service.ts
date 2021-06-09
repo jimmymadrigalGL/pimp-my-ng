@@ -42,9 +42,9 @@ export class ApiService {
   }
 
   private fetchTreeApi(): Observable<RuleNode[]> {
-    const serverUrl = 'https://raw.githubusercontent.com/jimmymadrigalGL';
-    const contentId = 'tree.json';
-    const url = `${serverUrl}/pimp-my-ng/master/src/${contentId}`;
+    const serverUrl = 'https://api.jsonbin.io';
+    const contentId = '60c129c64d024768b8f5199a';
+    const url = `${serverUrl}/b/${contentId}`;
     return from(fetch(url).then(res => res.json()));
   }
 }
