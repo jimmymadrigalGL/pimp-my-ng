@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { RuleNode } from './models/rule-node.model';
 import { ApiService } from './services/api.service';
 
@@ -7,17 +6,11 @@ import { ApiService } from './services/api.service';
   selector: 'my-app',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
   treeList$ = this.api.treeList$;
-  subscriptions: Subscription = new Subscription();
 
-  constructor(private api: ApiService) {}
-
-  ngOnInit(): void {
-    this.api.fetchTree();
+  constructor(private api: ApiService) {
   }
-
-  ngOnDestroy(): void {}
 
   onToggle(node: RuleNode) {
     this.api.checkNode(node.index, !node.checked);
