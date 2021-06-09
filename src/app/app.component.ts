@@ -18,4 +18,8 @@ export class AppComponent implements OnInit {
   onToggle(node: RuleNode) {
     this.api.checkNode(node.index, !node.checked);
   }
+
+  identify(index, node: RuleNode): number {
+    return node.index;
+  }
 }

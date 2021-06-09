@@ -15,6 +15,10 @@ export class NodeComponent {
     return `${this.urlPrefix}${this.node.reference}`;
   }
 
+  get isRule(){
+    return this.node.type === 'Rule';
+  }
+
   onToggle() {
     if (!this.node.children || this.node.children.length === 0) {
       this.toggle.emit();

@@ -12,4 +12,8 @@ export class TreeComponent {
   onToggle(node: RuleNode) {
     this.toggle.emit(node);
   }
+
+  identify(index, node: RuleNode): number {
+    return node.index;
+  }
 }
