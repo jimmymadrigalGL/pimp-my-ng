@@ -18,7 +18,9 @@
       (click)="onToggle()"
       class="opacity-0 absolute"
     />
-    <svg-icon src="/assets/check.svg" class="text-lg" [class.hidden]="!node.checked" ></svg-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" fill="currentColor"/>
+    </svg>
   </div>
   <div class="select-none mt-1">
     <strong
@@ -29,7 +31,6 @@
       >{{ node.recomendation }}
     </strong>
     <span [innerHTML]="node.label"></span>
-      <svg-icon src="/assets/hyperlink.svg" class="w-full pointer-events-none" style="height: 1em"></svg-icon>
     <a
       target="_blank"
       [attr.href]="urlReference"
@@ -44,5 +45,4 @@
       </svg>
     </a>
   </div>
-  <div class="ml-auto">{{ checkCount }}</div>
 </label>

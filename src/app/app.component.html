@@ -1,4 +1,4 @@
 <div *ngIf="treeList$ | async as treeList"
   class="m-3 flex flex-col flex-wrap justify-start items-stretch content-stretch">
-  <app-tree *ngFor="let node of treeList; trackBy: identify" [node]="node" (toggle)="onToggle($event)"></app-tree>
+  <app-tree *ngFor="let node of treeList" [node]="node" (toggle)="onToggle($event)"></app-tree>
 </div>

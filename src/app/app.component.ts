@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RuleNode } from './models/rule-node.model';
-import { FacadeService } from './services/facade.service';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  treeList$ = this.facade.tree$;
+export class AppComponent implements OnInit {
+  treeList$ = this.api.treeList$;
 
-  constructor(private facade: FacadeService) {}
+  constructor(private api: ApiService) {}
 
-  onToggle(node: RuleNode) {
-    this.facade.checkNode(node.index, !node.checked);
+  ngOnInit(): void {
+    this.api.fetchTree();
   }
 
-  identify(index, node: RuleNode): number {
-    return node.index;
+  onToggle(node: RuleNode) {
+    this.api.checkNode(node.index, !node.checked);
   }
 }
