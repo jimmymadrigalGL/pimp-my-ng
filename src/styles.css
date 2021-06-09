@@ -1,9 +1,1 @@
 /* Add application styles & imports to this file! */
-svg-icon {
-  display: contents;
-}
-svg-icon svg {
-  height: 1em;
-  display: inline;
-  width: auto;
-}
