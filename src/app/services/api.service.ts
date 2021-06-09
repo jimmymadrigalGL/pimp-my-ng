@@ -1,27 +1,41 @@
 import { Injectable } from '@angular/core';
-import { Observable, from, BehaviorSubject, combineLatest } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable, from, BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
+import { map, mergeMap, tap } from 'rxjs/operators';
 import { RuleNode } from '../models/rule-node.model';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
+  private action$ = new ReplaySubject<any>();
   private treeListSubject$ = new BehaviorSubject<RuleNode[]>([]);
   private checkedSubject$ = new BehaviorSubject<{ [key: string]: true }>({});
 
-  treeList$: Observable<RuleNode[]> = combineLatest([
-    this.treeListSubject$,
-    this.checkedSubject$
-  ]).pipe(
-    tap(([list, checked]) =>
-      list.forEach(node => this.markTree(node, checked))
-    ),
-    map(([list, checked]) => list)
-  );
+  reducer$: Observable<RuleNode[]>;
+  treeList$: Observable<RuleNode[]>;
 
-  constructor() {}
+  constructor() {
+    this.reducer$ = this.action$.pipe(
+      mergeMap(_ => this.fetchTreeApi().pipe(
+        tap(list => this.treeListSubject$.next(list)),
+      ))
+    );
+
+    this.treeList$ = combineLatest([
+      this.reducer$,
+      this.checkedSubject$
+    ]).pipe(
+      tap(([list, checked]) =>
+        list.forEach(node => this.markTree(node, checked))
+      ),
+      map(([list, checked]) => list)
+    );
+
+  }
 
   fetchTree() {
-    this.fetchTreeApi().subscribe(list => this.treeListSubject$.next(list));
+    this.action$.next(true);
+    // return this.fetchTreeApi().pipe(
+    //   tap(list => this.treeListSubject$.next(list))
+    // );
   }
 
   checkNode(id: string | number, check = true) {

@@ -1,9 +1,16 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
 import { RuleNode } from '../models/rule-node.model';
 
 @Component({
   selector: 'app-tree',
-  templateUrl: './tree.component.html'
+  templateUrl: './tree.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TreeComponent {
   @Input() node: RuleNode;
