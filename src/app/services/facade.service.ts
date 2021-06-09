@@ -46,7 +46,7 @@ export class FacadeService {
   private state$: Observable<State>;
   private actions$ = new ReplaySubject<Action>();
 
-  tree$: Observable<RuleNode[]>;
+  treeList$: Observable<RuleNode[]>;
 
   constructor() {
     this.createState();
@@ -72,8 +72,8 @@ export class FacadeService {
       scan((state, action) => this.reduce(action, state), this.initialState),
       tap(state => console.log(state)),
     );
-    this.tree$ = this.state$.pipe(
-      map(state => this.unpackTree(state)),
+    this.treeList$ = this.state$.pipe(
+      map(state => this.unpackTreeList(state)),
       tap(tree => console.log(tree)),
     );
   }
@@ -89,7 +89,7 @@ export class FacadeService {
     return {
       type: 'Load Success',
       hash: this.createHash(list),
-      tree: this.packTree(list),
+      tree: this.packTreeList(list),
     };
   }
 
@@ -121,7 +121,7 @@ export class FacadeService {
     }
   }
 
-  private packTree(list: RuleNode[]): VirtualNode[] {
+  private packTreeList(list: RuleNode[]): VirtualNode[] {
     const fn = (node: RuleNode, children: VirtualNode[]) => ({ id: node.index.toString(), children });
     return list.map(node => this.executePostOrder(node, fn))
   }
@@ -134,7 +134,7 @@ export class FacadeService {
     return hash;
   }
 
-  private unpackTree(state: State): RuleNode[] {
+  private unpackTreeList(state: State): RuleNode[] {
     const checked = (id: string, children: RuleNode[]) => state.checked[id]
       || (children.length > 0 && children.every(child => state.checked[child.index]));
 

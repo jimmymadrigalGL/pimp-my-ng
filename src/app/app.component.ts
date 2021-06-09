@@ -7,7 +7,7 @@ import { FacadeService } from './services/facade.service';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  treeList$ = this.facade.tree$;
+  treeList$ = this.facade.treeList$;
 
   constructor(private facade: FacadeService) {}
 
