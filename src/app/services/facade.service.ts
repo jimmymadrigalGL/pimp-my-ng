@@ -69,9 +69,13 @@ export class FacadeService {
     this.state$ = this.actions$.pipe(
       switchMap(action => this.handleEffect(action)),
       tap(action => console.log(action)),
-      scan((state, action) => this.reduce(action, state), this.initialState)
+      scan((state, action) => this.reduce(action, state), this.initialState),
+      tap(state => console.log(state)),
     );
-    this.tree$ = this.state$.pipe(map(state => this.unpackTree(state)));
+    this.tree$ = this.state$.pipe(
+      map(state => this.unpackTree(state)),
+      tap(tree => console.log(tree)),
+    );
   }
 
   private handleEffect(action: Action): Observable<Action> {
@@ -118,66 +122,33 @@ export class FacadeService {
   }
 
   private packTree(list: RuleNode[]): VirtualNode[] {
-    const fn = (node: RuleNode, children: any) => ({ id: node.index.toString(), children });
-    return list.map(node => this.recursiveChildFirst(node, fn))
+    const fn = (node: RuleNode, children: VirtualNode[]) => ({ id: node.index.toString(), children });
+    return list.map(node => this.executePostOrder(node, fn))
   }
 
   private createHash(list: RuleNode[]): { [key: string]: RuleNode } {
-    const fn = (node: RuleNode, children: any) => ({ [node.index]: node, ...children });
-    return list.map(node => this.recursiveChildFirst(node, fn)).reduce(
-      (acum, hash) => ({ ...hash, ...acum }), {}
-    );
+    const reduce = list => list.reduce((acum, hash) => ({ ...hash, ...acum }), {});
 
-    // const hash = list.reduce(
-    //   (state, node) => ({
-    //     ...state,
-    //     ...this.createHash(node)
-    //   }),
-    //   {}
-    // );
-
-    // return node.children.reduce(
-    //   (hash, child) => ({
-    //     ...hash,
-    //     ...this.createHash(child)
-    //   }),
-    //   {
-    //     [node.index]: node
-    //   }
-    // );
+    const fn = (node: RuleNode, children: { [key: string]: RuleNode }[]) => ({ [node.index]: node, ...reduce(children) });
+    const hash = reduce(list.map(node => this.executePostOrder(node, fn)));
+    return hash;
   }
 
   private unpackTree(state: State): RuleNode[] {
-
-    const checked = (node: RuleNode) => state.checked[node.index]
-      || (node.children.length > 0 && node.children.every(child => child.checked));
+    const checked = (id: string, children: RuleNode[]) => state.checked[id]
+      || (children.length > 0 && children.every(child => state.checked[child.index]));
 
     const fn = (virtualNode: VirtualNode, children: RuleNode[]): RuleNode => ({
       ...state.hash[virtualNode.id],
-      checked: checked(state.hash[virtualNode.id]),
+      checked: checked(virtualNode.id, children),
+      children,
     });
 
-
-    return state.tree.map(node => this.recursiveChildFirst(node, fn));
+    return state.tree.map(node => this.executePostOrder(node, fn));
   }
 
-  // private unpackNode(virtualNode: VirtualNode, state: State): RuleNode {
-  //   const node = state.hash[virtualNode.id];
-  //   const children = virtualNode.children.map(child =>
-  //     this.unpackNode(child, state)
-  //   );
-  //   const checked =
-  //     state.checked[virtualNode.id] ||
-  //     (children.length > 0 && children.every(child => child.checked));
-  //   return {
-  //     ...node,
-  //     children,
-  //     checked
-  //   };
-  // }
-
-  private recursiveChildFirst<T>(parent, fn: (p, c) => T) {
-    const children = parent.children?.map(child => this.recursiveChildFirst(child, fn));
+  private executePostOrder<T>(parent, fn: (p, c) => T): T {
+    const children = parent.children?.map(child => this.executePostOrder(child, fn));
     return fn(parent, children);
   }
 
